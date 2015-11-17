@@ -6,8 +6,8 @@ define(
 	placeholder : "/bin/res/img/placeholder.jpg",
 	//left   : 20,
 	//top    : 20,
-	//width  : 320,
-	//height : 568,
+	//width  : 120,
+	//height : 168,
 	DEBUG : 
 	{
 		debug : true,

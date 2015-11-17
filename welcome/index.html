@@ -2,22 +2,79 @@
 	<style>
 		#welcomeView .WelcomeView-label
 		{
-			margin-top: 0.5rem;
-			margin-bottom: 0.5rem;
-			text-align: center;
-			font-size: 1rem;
-			line-height: 1.1rem;
-			color: green;
+            position: relative;
+            margin: 0;
+            margin: 1.75rem .75rem .5rem;
+            overflow: hidden;
+            font-size: .7rem;
+            line-height: 1;
+            color: #6d6d72;
+            text-overflow: ellipsis;
+            text-transform: uppercase;
+            white-space: nowrap;
 		}
 
 		#welcomeView .WelcomeView-tutorial-link
 		{
-			text-align: center;
+            position: relative;
+            margin-left: 0.75rem;
 			font-size: 0.7rem;
-			line-height: 1.2rem;
-			text-decoration:underline;
-			color: green;
+			line-height: 2.2rem;
+            height: 2.2rem;
+			color: #3d4145;
 		}
+        #welcomeView #tutorialContainer>ul
+        {
+            position: relative;
+            padding: 0;
+            margin: 0;
+            background: #fff;
+        }
+
+        #welcomeView ul:before
+        {
+            position: absolute;
+            top: 0;
+            right: auto;
+            bottom: auto;
+            left: 0;
+            z-index: 15;
+            display: block;
+            width: 100%;
+            height: 1px;
+            content: '';
+            background-color: #e7e7e7;
+        }
+        #welcomeView ul:after
+        {
+            position: absolute;
+            top: auto;
+            right: auto;
+            bottom: 0;
+            left: 0;
+            z-index: 15;
+            display: block;
+            width: 100%;
+            height: 1px;
+            content: '';
+            background-color: #e7e7e7; 
+        }
+
+        #welcomeView .WelcomeView-tutorial-link:after
+        {
+            position: absolute;
+            top: auto;
+            right: auto;
+            bottom: 0;
+            left: 0;
+            z-index: 15;
+            display: block;
+            width: 100%;
+            height: 1px;
+            content: '';
+            background-color: #e7e7e7;
+        }
+
 	</style>
 	<script id="tutorialLinkTemplate" type="text/x-underscore-template">
 		<div id="<%=id%>" class="WelcomeView-tutorial-link" <%if(todo){%>style="color:red;"<%}%>><%=name%></div>
@@ -26,6 +83,7 @@
 	</div>
     <div class="bin-page-content">
     	<div class="WelcomeView-label">示例</div>
-    	<div id="tutorialContainer"></div>
+    	<div id="tutorialContainer">
+        </div>
     </div>
 </div>

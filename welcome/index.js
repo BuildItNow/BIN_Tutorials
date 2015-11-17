@@ -6,13 +6,15 @@ define(
 
 		Class.posGenHTML = function()
 		{
+            var html = "<ul>";
 			var template  = _.template(this.$html("#tutorialLinkTemplate"));
 			var container = this.$fragment("#tutorialContainer");
 			for(var i=0,i_sz=config.length; i<i_sz; ++i)
 			{
-				container.append(template({id:i,name:config[i].name,todo:config[i].todo}));
+                html +=	template({id:i,name:config[i].name,todo:config[i].todo});
 			}
-
+            html += "</ul>";
+            container.append(html);
 			var self = this;
 			container.find(".WelcomeView-tutorial-link").on("click", function(e)
 			{
