@@ -61,6 +61,7 @@ define(
 			{	
 				self.$html("#button", "点我");
 				indicatorView.stop();
+                indicatorView.remove();
 			}, 5000);
 		}
 

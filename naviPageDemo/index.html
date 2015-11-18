@@ -5,19 +5,11 @@
     
     <!-- 定义该页面使用的CSS style，注意：使用根节点和类前缀来限定CSS只在该页面使用和生效，避免CSS类冲突-->
     <style>
-        #naviPageDemoView .NaviPageDemoView-hello
-        {
-            width:100%;
-            height:auto;
-            text-align: left;
-            font-size: 0.7rem;
-            line-height: 1rem;
-        }
 	</style>
 
     <!-- 定义该页面需要使用的模板节点，如果没有这不需要定义这些节点-->
     <script id="helloTemplate" type="text/x-underscore-template">
-        <div class="NaviPageDemoView-hello"><%=desc%></div>
+        <p><%=desc%></p>
     </script>
 
     <!-- 定义该页面导航栏，如果要使用自带的配置导航栏功能，id必须使用"naviBar"，naviLeft,naviRight,naviTitle用于配置该导航栏

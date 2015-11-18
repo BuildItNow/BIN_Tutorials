@@ -8,7 +8,7 @@ define(
 			{
 				View.prototype.genHTML.call(this);
 
-				this.$html(null, "<div style='height:4rem;width:100%;background-color:green;'>Element View</div>");
+				this.$html(null, "<div style='height:4rem;font-size:0.7rem;width:100%;background-color:gray'>View From Element</div>");
 			}
 		});
 
@@ -33,7 +33,7 @@ define(
 		Class.htmlCreate = function()
 		{
 			this.$("#htmlRoot").empty();
-			this._htmlView = new HtmlView({html:"<div style='height:4rem;width:100%;background-color:green;'>Html View</div>"});
+			this._htmlView = new HtmlView({html:"<div style='height:4rem;font-size:0.7rem;width:100%;background-color:gray'>View From HTML</div>"});
 			this.$append("#htmlRoot", this._htmlView.$());
 		}
 

@@ -13,7 +13,7 @@ define(
 		{
 			this.setTitle("ITEM ID "+this._pushData.id);
 
-			this.$html(".bin-page-content", this._pushData.data.label);
+			this.$html(".bin-page-content","<p>"+this._pushData.data.label+"</p>");
 		}
 
 		return Base.extend(Class);

@@ -1,19 +1,16 @@
 p
 {
-	margin-top: 0.1rem;
-	margin-bottom: 0.1rem;
-	margin-left: 0;
-	margin-right: 0; 
+    margin: 0.5rem 0;
 	font-size:0.7rem;
-	line-height: 0.8rem;
+	line-height: 1.2rem;
+    word-break: break-all;
 }
 
 .app-link
 {
 	font-size:0.7rem;
-	text-decoration:underline;
-	color:green;
-	margin-top: 0.4rem;
-	margin-bottom: 0.4rem;
+    line-height: 1.2rem;
+    color: #0894ec;
 }
+
 

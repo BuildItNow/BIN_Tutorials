@@ -13,29 +13,11 @@
         2：BIN提供了加载css文件和style两种方式，对于style比较多得情况建议使用css文件，因为requirejs只会加载一次css文件，而style在每次加载的时候都会解析。
     -->
     <style>
-        #normalPageDemoView .NormalPageDemoView-goback
-        {
-            width:8rem;
-            height:1.5rem;
-            text-align: center;
-            font-size: 0.7rem;
-            line-height: 1.5rem;
-            background-color: gray;
-        }
-
-        #normalPageDemoView .NormalPageDemoView-hello
-        {
-            width:100%;
-            height:auto;
-            text-align: left;
-            font-size: 0.7rem;
-            line-height: 1rem;
-        }
 	</style>
 
     <!-- 定义该页面需要使用的模板节点，如果没有这不需要定义这些节点-->
     <script id="helloTemplate" type="text/x-underscore-template">
-        <div class="NormalPageDemoView-hello"><%=desc%></div>
+        <p><%=desc%></p>
     </script>
 
     <!-- 定义该页面内容，这个节点是实际内容的根节点，必须使用bin-page-content，一个页面的所有内容在该节点下开发，并且依赖该节点进行CSS定位-->
