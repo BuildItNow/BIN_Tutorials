@@ -1,0 +1,21 @@
+<div id="hybridDemo" class="bin-page">
+	<style>
+	</style>
+	<div id="naviBar" class="bin-page-navi-bar" naviTitle="text:WELCOME TO BIN" naviRight="hide:true">	    
+	</div>
+    <div class="bin-page-content">
+    	<p>BIN-HYBRID在页面级别上支持混合开发，一个页面可以是全H5开发，也可以是全Native开发，凭借BIN-HYBRID里面JS-OC(JAVA)的双向通信机制，可以将业务全放在JS层面，保证业务开发的跨平台，而原生仅仅关注于UI开发</p>
+        <p>在BIN里面每一个原生页面在H5页面栈(bin.naviController)中均包含一个占位view(从bin/native/nativePageView继承)，这保证了H5中push、pop、popTo操作的一致性</p>
+        <p>多级返回包含：原生-原生 原生-H5 H5-原生 H5-H5 这几种方式，每一种方式都可以包含H5或者原生的中间页面，最终BIN都会表现出一致的效果</p>
+        <div id="pushNative" class="app-link">跳转到原生页面</div>
+        <div id="pushNativeWithData" class="app-link">携带数据跳转到原生页面</div>
+        <div id="pushH5SubView" class="app-link">跳转到H5SubView</div>
+        <div id="popWithData" class="app-link">返回1级页面,携带参数</div>
+        <div id="pop2" class="app-link">返回2级页面</div>
+        <div id="pop3" class="app-link">返回3级页面</div>
+        <div id="popWelcomeIndex" class="app-link">返回到主页</div>
+        <div id="popNative" class="app-link">返回到原生页面</div>
+        <p>通过BIN-HYBRID中JS-OC(JAVA)的通信机制，JS通过nativeObject.exec(name, args, cb)来执行Native代码，原生通过scriptObject.get(name, cb) scriptObject.call(name, args, cb) scriptObject.set(name, data, cb)来执行JS代码，所有的通信都是异步回调过程(JS开发模式)</p>
+        <div id="pushComNative" class="app-link">跳转到通信Demo原生页面</div>
+    </div>
+</div>

@@ -38,15 +38,14 @@ define(
 
 		Class.onRight = function()
 		{
-			/*if(cordova)
+			if(cordova)
 			{
 				cordova.binPlugins.common.openSystemBrowser("https://github.com/BuildItNow/BIN");
 			}
 			else
 			{
 				window.open('https://github.com/BuildItNow/BIN', 'newwindow');
-			}*/
-			bin.naviController.push("hybridDemo/index", null, {native:true});
+			}
 		}
 
 		return Base.extend(Class);

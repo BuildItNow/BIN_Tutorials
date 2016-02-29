@@ -33,8 +33,10 @@ define(
 		Class.htmlCreate = function()
 		{
 			this.$("#htmlRoot").empty();
-			this._htmlView = new HtmlView({html:"<div style='height:4rem;font-size:0.7rem;width:100%;background-color:gray'>View From HTML</div>"});
-			this.$append("#htmlRoot", this._htmlView.$());
+			var view = new View({html:"<div style='height:4rem;font-size:0.7rem;width:100%;background-color:gray'>View From HTML</div>"});
+			this._htmlView = this.$("#htmlRoot");
+			this._htmlView.append(view.$());
+
 		}
 
 		return Base.extend(Class);

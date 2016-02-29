@@ -12,7 +12,7 @@ define(["bin/core/naviPageView"],
 		{
 			Base.prototype.genHTML.call(this);
 
-			this.setTitle("示例 "+this._config.name);
+			this.setTitle("示例 "+ (this._config ? this._config.name : "Demo"));
 		}
 
 		return Base.extend(Class);
