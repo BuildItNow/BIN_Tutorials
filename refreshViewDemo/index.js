@@ -52,7 +52,6 @@ define(
 			this._refreshView.remove();
 		}
 
-
 		return Base.extend(Class);
 	}
 );

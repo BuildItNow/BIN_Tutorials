@@ -1,6 +1,6 @@
 define(
-	["bin/core/naviPageView", "welcome/tutorialConfig"],
-	function(Base, config)
+	["bin/core/naviPageView", "welcome/tutorialConfig", "welcome/test"],
+	function(Base, config, test)
 	{
 		var Class = {};
 
@@ -38,14 +38,14 @@ define(
 
 		Class.onRight = function()
 		{
-			if(cordova)
+			bin.mapManager.require(function(err)
 			{
-				cordova.binPlugins.common.openSystemBrowser("https://github.com/BuildItNow/BIN");
-			}
-			else
-			{
-				window.open('https://github.com/BuildItNow/BIN', 'newwindow');
-			}
+				if(err)
+				{
+					return ;
+				}
+				
+			});
 		}
 
 		return Base.extend(Class);
