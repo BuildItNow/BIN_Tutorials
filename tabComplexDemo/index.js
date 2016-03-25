@@ -42,9 +42,9 @@ define(
 			if(item === "refresh" && !this._refreshView)
 			{
 				this._refreshResult = 0;
-				this._refreshView = new RefreshView({elem:view.$("#refreshView"), autoRefresh:"animation", onRefresh:function()
+				this._refreshView = new RefreshView({elem:view.$("#refreshView"), autoRefresh:"animation", onRefresh:function(refreshView)
 					{
-						self._onRefreshViewRefresh();
+						self._onRefreshViewRefresh(refreshView);
 					}});
 			}
 			else if(item === "list" && !this._listView)
@@ -53,21 +53,21 @@ define(
 			}
 		}
 
-		Class._onRefreshViewRefresh = function()
+		Class._onRefreshViewRefresh = function(refreshView)
 		{
 			var self = this;
 			osUtil.delayCall(function()
 			{
 				if(self._refreshResult == 1)
 				{
-					self._refreshView.$html("#refreshContent", view0html);
+					refreshView.$scrollerContent.html(view0html);
 
-					self._refreshView.refreshDone();
+					refreshView.refreshDone();
 				}
 				else if(self._refreshResult == 0)
 				{
-					self._refreshView.$html("#refreshContent", view1html);
-					self._refreshView.$("#goBack").on("click", 
+					refreshView.$scrollerContent.html(view1html);
+					refreshView.$scrollerContent.find("#goBack").on("click", 
 						function()
 						{	
 							bin.hudManager.alert(
@@ -81,11 +81,11 @@ define(
 							})
 						});
 
-					self._refreshView.refreshDone();
+					refreshView.refreshDone();
 				}
 				else
 				{
-					self._refreshView.refreshDone(true);
+					refreshView.refreshDone(true);
 				}
 
 				++ self._refreshResult;

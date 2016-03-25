@@ -7,31 +7,31 @@ define(
 		Class.posGenHTML = function()
 		{
 			var self = this;
-			this._refreshView = new RefreshView({elem:this.$("#refreshView"), onRefresh:function(){self._onRefresh()}});
+			this._refreshView = new RefreshView({elem:this.$("#refreshView"), onRefresh:function(refreshView){self._onRefresh(refreshView)}});
 			this._refreshResult = 0;
 		}
 
-		Class._onRefresh = function()
+		Class._onRefresh = function(refreshView)
 		{
 			var self = this;
 			osUtil.delayCall(function()
 			{
 				if(self._refreshResult == 0)
 				{
-					self.$html("#refreshContent", view0Html);
+					refreshView.$scrollerContent.html(view0Html);
 
-					self._refreshView.refreshDone();
+					refreshView.refreshDone();
 				}
 				else if(self._refreshResult == 1)
 				{
-					self.$html("#refreshContent", view1Html);
-					self.$("#goBack").on("click", function(){self.goBack()});
+					refreshView.$scrollerContent.html(view1Html);
+					refreshView.$scrollerContent.find("#goBack").on("click", function(){self.goBack()});
 
-					self._refreshView.refreshDone();
+					refreshView.refreshDone();
 				}
 				else
 				{
-					self._refreshView.refreshDone(true);
+					refreshView.refreshDone(true);
 				}
 
 				++ self._refreshResult;
