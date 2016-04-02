@@ -1,6 +1,6 @@
 define(
-	["bin/core/naviPageView", "welcome/tutorialConfig", "welcome/test"],
-	function(Base, config, test)
+	["bin/core/naviPageView", "welcome/tutorialConfig"],
+	function(Base, config)
 	{
 		var Class = {};
 
@@ -38,14 +38,13 @@ define(
 
 		Class.onRight = function()
 		{
-			bin.mapManager.require(function(err)
-			{
-				if(err)
-				{
-					return ;
-				}
-				
-			});
+			window.open("http://github.com/BuildItNow/BIN");
+		}
+
+		Class.onLeft = function()
+		{
+			bin.lsLoader.remAllCaches();
+			bin.hudManager.showStatus("清除页面本地缓存成功");
 		}
 
 		return Base.extend(Class);

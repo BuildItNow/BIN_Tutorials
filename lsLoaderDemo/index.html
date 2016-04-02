@@ -1,0 +1,26 @@
+<div id="lsLoaderDemoView" class="bin-page">
+	<style>
+		
+	</style>
+	<div id="naviBar" class="bin-page-navi-bar" naviTitle="text:WELCOME TO BIN" naviRight="hide:true">	    
+	</div>
+    <div class="bin-page-content">
+    	<p>
+    		BIN框架对内置RequireJS做了补充，以支持页面本地化：<br/>
+    		1:将CSS、HTML、JS缓存在本地（LocalStorage）<br/>
+            2:通常LocalStorage有5MB限制，因此文件经过压缩后再缓存，降低对LocalStorage的开销(压缩后在20%-40%)，另一方面业务代码（文本）3MB以内通常是足够的。<br/>
+    		3:在文件级别上支持缓存文件的版本更新:使用自动化构建工具生成local-caches.json文件<br/>
+    	</p>
+        <p>
+            页面本地化机制，使BIN不仅适合于PhoneGap开发APP，也适合于WEB-APP的开发(特别是微信公众号)。对于WEB-APP在资源上的缓存策略：<br/>
+            1:强缓存:第三方库代码、BIN框架代码，经过合并混淆后，文件名加HASH；带ID的资源图片<br/>
+            2:协商缓存(304):配置文件、带名称的资源图片<br/>
+            3:本地缓存(LocalStorage):业务代码<br/>
+            通过这些处理后，可大大降低在静态资源上的网络开销，提升页面的加载速度，提高用户的操作体验。可在globalConfig的runtimeConfig中useLSCache设置是否打开本地页面缓存。
+        </p>
+        <p id="cacheInfo">
+
+        </p>
+        <div id="clear" class="app-link">清除缓存</div>
+    </div>
+</div>

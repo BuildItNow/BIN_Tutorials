@@ -1,7 +1,8 @@
 {
-	"version":5,
+	"version":21,
 	"files":
 	{
 		"./welcome/index.js":7
-	}
+	},
+	"all":true
 }

@@ -1,9 +1,10 @@
 define(
 {
 	name : "Hello BIN Framework",
-	runtime : "RELEASE",
+	runtime : "DEBUG",
 	pageIOAnim  : "rightIO",
 	placeholder : "/bin/res/img/placeholder.jpg",
+	mapSDK: "2.0",
 	//left   : 20,
 	//top    : 20,
 	//width  : 120,
@@ -11,6 +12,8 @@ define(
 	DEBUG : 
 	{
 		debug : true,
+		useLSCache : true,
+		usePRLoader : true,
 		useNetLocal : true,
 		server : "http://localhost:8081",
 		timeout : 20000,
@@ -19,6 +22,7 @@ define(
 	RELEASE :
 	{
 		debug : false,
+		useLSCache : true,
 		useNetLocal : true,
 		server : "http://localhost:8081",
 		timeout : 20000,
@@ -68,5 +72,23 @@ define(
 			osUtil:"bin/util/osUtil",
 			disUtil:"bin/util/disUtil",
 		}
+	},
+	prloadConfig:
+	{
+		interval : 1000,	// loading interval time
+		views :
+		[
+			"baiduMapDemo/index",
+			"datePickerDemo/index",
+			"lazyLoadDemo/index",
+			"lazyLoadListDemo/index",
+			"lsLoaderDemo/index",
+			"prLoaderDemo/index",
+			"refreshListViewDemo/index",
+			"refreshViewDemo/index",
+			"tabBarDemo/index",
+			"tabDemo/index",
+			"switchDemo/index"
+		]
 	}
 });

@@ -1,0 +1,25 @@
+<div id="baiduMapView" class="bin-page">
+	<style>
+		#baiduMapView .BaiduMapView-tips
+		{
+			width:100%;
+			height: 50%;
+		}
+
+		#baiduMapView .BaiduMapView-map
+		{
+		 	width:100%;
+			height:50%;
+			position:relative;
+		}
+	</style>
+	<div id="naviBar" class="bin-page-navi-bar" naviTitle="text:WELCOME TO BIN" naviRight="hide:true">	    
+	</div>
+    <div class="bin-page-content">
+    	<div id="mapContainer" class="BaiduMapView-map">
+        </div>
+    	<div class="BaiduMapView-tips">
+    		<p>BIN使用Require机制对百度Map进行了集成。在globalConfig中用mapSDK设定使用的百度地图版本：mapSDK:"2.0";在开发中通过bin.mapManager.require(cb)加载百度地图库，在cb里面写地图相关代码。注意：不需要在index.html里面添加script来加载百度地图库，script标签加载会影响requirejs启动机制</p>
+        </div>
+    </div>
+</div>

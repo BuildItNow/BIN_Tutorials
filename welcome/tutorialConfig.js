@@ -1,6 +1,9 @@
 define([],
 [
-	{path:"hybridDemo/index",name:"混合开发"},
+	{path:"baiduMapDemo/index",name:"百度地图"},
+	{path:"lsLoaderDemo/index",name:"页面本地化"},
+	{path:"prLoaderDemo/index",name:"页面预加载"},
+	//{path:"hybridDemo/index",name:"混合开发"},
 	{path:"normalPageDemo/index",name:"一般页面开发"},
 	{path:"naviPageDemo/index",name:"具有导航栏页面开发"},
 	{path:"viewDemo/index",name:"view开发"},
