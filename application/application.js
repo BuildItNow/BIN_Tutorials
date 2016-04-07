@@ -11,7 +11,10 @@ function(Base, DataCenter)
 
 	Application.run = function()
 	{
-		bin.naviController.startWith("welcome/index");
+		bin.naviController.startWith("welcome/index", null, {onPushed:function()
+		{
+			$("#windowLoading").remove();
+		}});
 	}
 
 	return Base.extend(Application);

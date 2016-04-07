@@ -1,6 +1,7 @@
 module.exports = 
 {
 	dest:"dest",
+    useWindowLoading : true,
 	lsCaches:
 	{
         //all:true,
