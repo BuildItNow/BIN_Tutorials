@@ -38,6 +38,7 @@ module.exports =
             "tabBarDemo",
             "viewDemo",
             "welcome",
+            "selectDemo",
     	],
 	}
 }
