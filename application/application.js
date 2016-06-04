@@ -1,5 +1,5 @@
 define(
-["bin/core/application", "application/dataCenter", "css!application/css/demo.css"],
+["bin/core/spaApplication", "application/dataCenter", "css!application/css/demo.css"],
 function(Base, DataCenter)
 {
 	var Application = {};
