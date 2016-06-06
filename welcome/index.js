@@ -38,7 +38,14 @@ define(
 
 		Class.onRight = function()
 		{
-			window.open("http://github.com/BuildItNow/BIN");
+			if(cordova)
+			{
+				cordova.binPlugins.common.openSystemBrowser("http://github.com/BuildItNow/BIN");
+			}
+			else
+			{
+				window.open("http://github.com/BuildItNow/BIN");
+			}
 		}
 
 		Class.onLeft = function()
