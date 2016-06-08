@@ -1,6 +1,6 @@
 define(
-	["common/demoView", "bin/util/osUtil"],
-	function(Base, osUtil)
+	["common/demoView", "bin/util/osUtil", "bin/common/scrollView"],
+	function(Base, osUtil, ScrollView)
 	{
 		var Class = {};
 
@@ -8,7 +8,7 @@ define(
 		{
 			Base.prototype.posGenHTML.call(this);
 
-			new bin.ui.View({elem:this.$content()});
+			new ScrollView({elem:this.$content()});
 		}
 
 		return Base.extend(Class);

@@ -1,6 +1,6 @@
 define(
-	["bin/core/naviPageView", "welcome/tutorialConfig"],
-	function(Base, config)
+	["bin/core/naviPageView", "welcome/tutorialConfig", "bin/common/scrollView"],
+	function(Base, config, ScrollView)
 	{
 		var Class = {};
 
@@ -22,6 +22,8 @@ define(
 			});
 
 			container.setup();
+
+			new ScrollView({elem:this.$content(), gotoTop:true});
 		}
 
 		Class.onClickTutorial = function(config)

@@ -2,7 +2,7 @@ define(
 {
 	name : "Hello BIN Framework",
 	appID : "com.bin.tutorials",
-	runtime : "DEBUG",
+	runtime : "RELEASE",
 	pageIOAnim  : "rightIO",
 	placeholder : "bin/res/img/placeholder.jpg",
 	mapSDK: "2.0",
@@ -13,7 +13,7 @@ define(
 	DEBUG : 
 	{
 		debug : true,
-		useLSCache : true,
+		useLSCache : false,
 		usePRLoader : true,
 		useNetLocal : true,
 		server : "http://localhost:8081",
@@ -22,7 +22,7 @@ define(
 	},	
 	RELEASE :
 	{
-		debug : false,
+		debug : true,
 		useLSCache : true,
 		useNetLocal : true,
 		server : "http://localhost:8081",

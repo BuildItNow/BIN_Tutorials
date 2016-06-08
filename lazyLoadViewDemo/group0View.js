@@ -1,6 +1,6 @@
 define(
-	["common/demoView", "bin/common/swipeView"],
-	function(Base, SwipeView)
+	["bin/common/swipeView", "text!lazyLoadViewDemo/group0View.html"],
+	function(SwipeView, html)
 	{
 		var Class = 
 		{
@@ -51,8 +51,7 @@ define(
 				{
 					console.info("page "+index);
 					bin.hudManager.showStatus("page "+index);
-				},
-				swiperOptions:{loop:true, pagination:this.$("#swipePagination")}});
+				}, swiperOptions:{loop:true}});
 		}
 
 		Class.onShowSlide0 = function()
@@ -70,40 +69,6 @@ define(
 			this._swipeView.slidePrev();
 		}
 
-		Class.del = function()
-		{
-			this._swipeView.removeSlide(this._swipeView.getCurrent(), true);
-		}
-
-		Class.delAll = function()
-		{
-			this._swipeView.removeAllSlides(true);
-		}
-
-		Class.delAllNoRefresh = function()
-		{
-			this._swipeView.removeAllSlides(false);
-		}
-
-
-		Class.add = function()
-		{
-			this._swipeView.appendSlide('<div class="SwipeDemoView-swipe-slide">\
-    			<div class="SwipeDemoView-swipe-background" style="background-image:url(./swipeDemo/img/3.jpg)"></div>\
-    		</div>', true);
-		}
-
-		Class.delNoRefresh = function()
-		{
-			this._swipeView.removeSlide(this._swipeView.getCurrent(), false);
-		}
-
-		Class.addNoRefresh = function()
-		{
-			this._swipeView.appendSlide('<div class="SwipeDemoView-swipe-slide">\
-    			<div class="SwipeDemoView-swipe-background" style="background-image:url(./swipeDemo/img/3.jpg)"></div>\
-    		</div>', false);
-		}
 
 		Class.next = function()
 		{
@@ -115,6 +80,6 @@ define(
 			this._swipeView.remove();
 		}
 
-		return Base.extend(Class);
+		return bin.ui.View.extend(Class, {html:html});
 	} 
 );
