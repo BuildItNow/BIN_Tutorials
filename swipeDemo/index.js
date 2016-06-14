@@ -52,7 +52,7 @@ define(
 					console.info("page "+index);
 					bin.hudManager.showStatus("page "+index);
 				},
-				swiperOptions:{loop:true, pagination:this.$("#swipePagination")}});
+				swiperOptions:{loop:true, pagination:this.$("#swipePagination"), autoplay:3000, autoplayDisableOnInteraction:false}});
 		}
 
 		Class.onShowSlide0 = function()
