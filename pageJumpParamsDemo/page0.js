@@ -1,6 +1,6 @@
 define(
-	["bin/core/naviPageView", "bin/util/osUtil"],
-	function(Base, osUtil)
+	["bin/core/naviPageView", "bin/core/util"],
+	function(Base, util)
 	{
 		var Class = {};
 
@@ -12,7 +12,7 @@ define(
 
 		Class.onViewPush = function(pushFrom, pushData, queryParams)
 		{
-			bin.hudManager.alertInfo("数据 "+osUtil.dump(pushData)+" Query数据 "+osUtil.dump(queryParams), "从"+pushFrom+"跳转");
+			bin.hudManager.alertInfo("数据 "+util.dump(pushData)+" Query数据 "+util.dump(queryParams), "从"+pushFrom+"跳转");
 		}
 
 		Class.back = function()

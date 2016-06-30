@@ -1,6 +1,6 @@
 define(
-	["common/demoView", "netDemo/client", "bin/util/osUtil"],
-	function(Base, Client, osUtil)
+	["common/demoView", "netDemo/client", "bin/core/util"],
+	function(Base, Client, util)
 	{
 		var Class = {};
 
@@ -27,7 +27,7 @@ define(
 
 		Class.globalRead = function()
 		{
-			this.$html("#globalResult", osUtil.dump(bin.dataCenter.getGlobalValue("test")));
+			this.$html("#globalResult", util.dump(bin.dataCenter.getGlobalValue("test")));
 		}
 
 		Class.globalSession = function()
@@ -37,7 +37,7 @@ define(
 
 		Class.globalSessionRead = function()
 		{
-			this.$html("#globalSessionResult", osUtil.dump(bin.dataCenter.getGlobalSessionValue("test")));
+			this.$html("#globalSessionResult", util.dump(bin.dataCenter.getGlobalSessionValue("test")));
 		}
 
 		Class.AUserLogin = function()
@@ -72,12 +72,12 @@ define(
 
 		Class.UserRead = function()
 		{
-			this.$html("#userResult", osUtil.dump(bin.dataCenter.getUserValue("test")));
+			this.$html("#userResult", util.dump(bin.dataCenter.getUserValue("test")));
 		}
 
 		Class.UserSessionRead = function()
 		{
-			this.$html("#userResult", osUtil.dump(bin.dataCenter.getUserSessionValue("test")));
+			this.$html("#userResult", util.dump(bin.dataCenter.getUserSessionValue("test")));
 		}
 
 		return Base.extend(Class);

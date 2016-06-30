@@ -1,6 +1,6 @@
 define(
-	["common/demoView", "bin/util/osUtil", "bin/common/indicatorView"],
-	function(Base, osUtil, IndicatorView)
+	["common/demoView", "bin/common/indicatorView"],
+	function(Base, IndicatorView)
 	{
 		var Class = {};
 
@@ -18,7 +18,7 @@ define(
 			indicatorView.start();
 
 			var self = this;
-			osUtil.delayCall(function()
+			setTimeout(function()
 			{	
 				self.$html("#block0Desc", "Loading Done");
 				indicatorView.stop();
@@ -33,11 +33,11 @@ define(
 			var id1 = indicatorView1.start();
 
 			var self = this;
-			osUtil.delayCall(function()
+			setTimeout(function()
 			{	
 				self.$html("#block2Desc", "stop第一次,indicator还不会消失");
 				indicatorView1.stop(id0);
-				osUtil.delayCall(function()
+				setTimeout(function()
 				{
 					self.$html("#block2Desc", "stop第二次,indicator消失");
 					indicatorView1.stop(id1);
@@ -57,7 +57,7 @@ define(
 			indicatorView.start({model:true});
 			
 			var self = this;
-			osUtil.delayCall(function()
+			setTimeout(function()
 			{	
 				self.$html("#button", "点我");
 				indicatorView.stop();

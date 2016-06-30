@@ -1,6 +1,6 @@
 define(
-	["common/demoView", "netLocalDemo/client", "bin/util/osUtil"],
-	function(Base, Client, osUtil)
+	["common/demoView", "netLocalDemo/client", "bin/core/util"],
+	function(Base, Client, util)
 	{
 		var Class = {};
 
@@ -14,7 +14,7 @@ define(
 			var self = this;
 			var onRequestResult = function(data)
 			{
-				self.$("#requestResult").text(osUtil.dump(data));
+				self.$("#requestResult").text(util.dump(data));
 			}
 
 			switch(e.currentTarget.id)

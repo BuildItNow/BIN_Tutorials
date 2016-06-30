@@ -1,6 +1,6 @@
 define(
-	["common/demoView", "sendCheckDemo/client", "bin/util/osUtil"],
-	function(Base, Client, osUtil)
+	["common/demoView", "sendCheckDemo/client", "bin/core/util"],
+	function(Base, Client, util)
 	{
 		var Class = {};
 
@@ -15,7 +15,7 @@ define(
 			var self = this;
 			Client.abortRequest(function(data, netParams)
 			{
-				self.$text("#abortResult", "结果：来源 "+netParams.userdatas.from+" 数据 "+osUtil.dump(data));
+				self.$text("#abortResult", "结果：来源 "+netParams.userdatas.from+" 数据 "+util.dump(data));
 			}, function(error, netParams)
 			{
 				if(netParams.userdatas.abort)
@@ -30,7 +30,7 @@ define(
 			var self = this;
 			Client.rejectRequest(function(data, netParams)
 			{
-				self.$text("#rejectResult", "结果：来源 "+netParams.userdatas.from+" 数据 "+osUtil.dump(data));
+				self.$text("#rejectResult", "结果：来源 "+netParams.userdatas.from+" 数据 "+util.dump(data));
 			});
 		}
 

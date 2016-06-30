@@ -1,9 +1,8 @@
 define(
 	[
-		"bin/native/nativePageView",
-        "bin/util/osUtil", 
+		"bin/native/nativePageView"
     ], 
-	function(Base, osUtil)
+	function(Base)
 	{
 
 		var Class = 

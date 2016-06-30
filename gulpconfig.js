@@ -36,9 +36,27 @@ module.exports =
             "swipeDemo",
             "switchDemo",
             "tabBarDemo",
+            "tabDemo",
+            "scrollViewDemo",
+            "lazyLoadViewDemo",
             "viewDemo",
             "welcome",
             "selectDemo",
     	],
-	}
+	},
+    webIndexes:
+    {
+        //css:"app/css/app.css",
+        files:
+        [
+            {
+                name:"index.html",
+                inlines:
+                [
+                    //"home/index",
+                ]
+            }
+            
+        ]
+    }
 }

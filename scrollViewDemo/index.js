@@ -1,6 +1,6 @@
 define(
-	["common/demoView", "bin/util/osUtil", "bin/common/scrollView"],
-	function(Base, osUtil, ScrollView)
+	["common/demoView", "bin/common/scrollView"],
+	function(Base, ScrollView)
 	{
 		var Class = {};
 

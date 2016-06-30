@@ -2,7 +2,7 @@ define(
 {
 	name : "Hello BIN Framework",
 	appID : "com.bin.tutorials",
-	runtime : "RELEASE",
+	runtime : "DEBUG",
 	pageIOAnim  : "rightIO",
 	placeholder : "bin/res/img/placeholder.jpg",
 	mapSDK: "2.0",
@@ -13,7 +13,7 @@ define(
 	DEBUG : 
 	{
 		debug : true,
-		useLSCache : false,
+		useLSCache : true,
 		usePRLoader : true,
 		useNetLocal : true,
 		server : "http://localhost:8081",
@@ -25,6 +25,7 @@ define(
 		debug : true,
 		useLSCache : true,
 		useNetLocal : true,
+		usePRLoader : true,
 		server : "http://localhost:8081",
 		timeout : 20000,
 		maxCacheDuration : 1*24*60*60*1000,
@@ -67,11 +68,6 @@ define(
 			View:"bin/core/view",
 			PageView:"bin/core/pageView",
 			NaviPageView:"bin/core/naviPageView",
-		},
-		util:
-		{
-			osUtil:"bin/util/osUtil",
-			disUtil:"bin/util/disUtil",
 		}
 	},
 	prloadConfig:
@@ -89,7 +85,7 @@ define(
 			"refreshViewDemo/index",
 			"tabBarDemo/index",
 			"tabDemo/index",
-			"switchDemo/index"
+			"switchDemo/index",
 		]
 	}
 });

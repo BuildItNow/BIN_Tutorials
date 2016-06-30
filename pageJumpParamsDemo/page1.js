@@ -1,6 +1,6 @@
 define(
-	["bin/core/naviPageView", "bin/util/osUtil"],
-	function(Base, osUtil)
+	["bin/core/naviPageView"],
+	function(Base)
 	{
 		var Class = {};
 

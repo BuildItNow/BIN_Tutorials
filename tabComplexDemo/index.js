@@ -1,6 +1,6 @@
 define(
-	["common/demoView", "bin/common/tabView", "bin/common/refreshView", "bin/common/listView", "bin/util/osUtil", "text!tabComplexDemo/view0.html", "text!tabComplexDemo/view1.html"],
-	function(Base, TabView, RefreshView, ListView, osUtil, view0html, view1html)
+	["common/demoView", "bin/common/tabView", "bin/common/refreshView", "bin/common/listView", "text!tabComplexDemo/view0.html", "text!tabComplexDemo/view1.html"],
+	function(Base, TabView, RefreshView, ListView, view0html, view1html)
 	{
 		var Class = {};
 
@@ -56,7 +56,7 @@ define(
 		Class._onRefreshViewRefresh = function(refreshView)
 		{
 			var self = this;
-			osUtil.delayCall(function()
+			setTimeout(function()
 			{
 				if(self._refreshResult == 1)
 				{

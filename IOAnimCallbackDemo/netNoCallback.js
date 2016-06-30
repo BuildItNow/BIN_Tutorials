@@ -1,6 +1,6 @@
 define(
-	["bin/core/naviPageView", "bin/common/tabView", "text!IOAnimCallbackDemo/callbackContent.html", "bin/util/osUtil"],
-	function(Base, TabView, contentHtml, osUtil)
+	["bin/core/naviPageView", "bin/common/tabView", "text!IOAnimCallbackDemo/callbackContent.html"],
+	function(Base, TabView, contentHtml)
 	{
 		var Class = {};
 

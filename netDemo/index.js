@@ -1,6 +1,6 @@
 define(
-	["common/demoView", "netDemo/client", "bin/util/osUtil"],
-	function(Base, Client, osUtil)
+	["common/demoView", "netDemo/client", "bin/core/util"],
+	function(Base, Client, util)
 	{
 		var Class = {};
 
@@ -14,7 +14,7 @@ define(
 			var self = this;
 			Client.testAPI(function(data)
 			{
-				self.$text("#requestResult", osUtil.dump(data));
+				self.$text("#requestResult", util.dump(data));
 			})
 		}
 

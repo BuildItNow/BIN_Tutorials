@@ -1,6 +1,6 @@
 define(
-	["common/demoView", "cacheDemo/client", "bin/util/osUtil"],
-	function(Base, Client, osUtil)
+	["common/demoView", "cacheDemo/client", "bin/core/util"],
+	function(Base, Client, util)
 	{
 		var Class = {};
 
@@ -17,7 +17,7 @@ define(
 			var self = this;
 			Client.cacheNormal(function(data, netParams)
 			{
-				self.$text("#normalResult", "结果：来源 "+netParams.userdatas.from+" 数据 "+osUtil.dump(data));
+				self.$text("#normalResult", "结果：来源 "+netParams.userdatas.from+" 数据 "+util.dump(data));
 			})
 		}
 
@@ -26,7 +26,7 @@ define(
 			var self = this;
 			Client.cacheDuration(function(data, netParams)
 			{
-				self.$text("#durationResult", "结果：来源 "+netParams.userdatas.from+" 数据 "+osUtil.dump(data));
+				self.$text("#durationResult", "结果：来源 "+netParams.userdatas.from+" 数据 "+util.dump(data));
 			})
 		}
 
@@ -35,7 +35,7 @@ define(
 			var self = this;
 			Client.cacheSession(function(data, netParams)
 			{
-				self.$text("#sessionResult", "结果：来源 "+netParams.userdatas.from+" 数据 "+osUtil.dump(data));
+				self.$text("#sessionResult", "结果：来源 "+netParams.userdatas.from+" 数据 "+util.dump(data));
 			})
 		}
 
@@ -44,7 +44,7 @@ define(
 			var self = this;
 			Client.cacheUserSession(function(data, netParams)
 			{
-				self.$text("#userSessionResult", "结果：来源 "+netParams.userdatas.from+" 数据 "+osUtil.dump(data));
+				self.$text("#userSessionResult", "结果：来源 "+netParams.userdatas.from+" 数据 "+util.dump(data));
 			})
 		}
 

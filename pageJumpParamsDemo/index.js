@@ -1,6 +1,6 @@
 define(
-	["common/demoView", "bin/util/osUtil"],
-	function(Base, osUtil)
+	["common/demoView", "bin/core/util"],
+	function(Base, util)
 	{
 		var Class = {};
 
@@ -16,7 +16,7 @@ define(
 
 		Class.onViewBack = function(backFrom, backData)
 		{
-			bin.hudManager.alertInfo("数据 "+osUtil.dump(backData), "从"+backFrom+"返回");
+			bin.hudManager.alertInfo("数据 "+util.dump(backData), "从"+backFrom+"返回");
 		}
 
 		return Base.extend(Class);

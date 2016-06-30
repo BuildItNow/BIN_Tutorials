@@ -1,6 +1,6 @@
 define(
-	["common/demoView", "bin/core/view", "bin/util/osUtil"],
-	function(Base, View, osUtil)
+	["common/demoView", "bin/core/view"],
+	function(Base, View)
 	{
 		var ElemView = View.extend(
 		{
