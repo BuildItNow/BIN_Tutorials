@@ -13,8 +13,8 @@ define(
 	DEBUG : 
 	{
 		debug : true,
-		useLSCache : true,
-		usePRLoader : true,
+		useLSCache : false,
+		usePRLoader : false,
 		useNetLocal : true,
 		server : "http://localhost:8081",
 		timeout : 20000,
