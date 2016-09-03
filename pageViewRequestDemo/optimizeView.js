@@ -19,7 +19,7 @@ define(
 				});
 			}, function()
 	        {
-	        	var map = new BMap.Map("mapContainer");
+	        	var map = new BMap.Map("optMapContainer");
 	            map.centerAndZoom(new BMap.Point(106.53,29.59),16);
 	        });
 		}

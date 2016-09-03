@@ -49,7 +49,7 @@ define(
 			}
 			else if(item === "list" && !this._listView)
 			{
-				this._listView = new ListView({elem:view.$("#listView"), itemProvider:new ItemProvider({template:this.$html("#itemTemplate")}), dataProvider:new ListView.DataProvider({type:"demo"})});
+				this._listView = new ListView({elem:view.$("#listView"), noPullToRefresh:true, itemProvider:new ItemProvider({template:this.$html("#itemTemplate")}), dataProvider:new ListView.DataProvider({type:"demo"})});
 			}
 		}
 

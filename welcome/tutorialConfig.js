@@ -30,6 +30,7 @@ define([],
 	{path:"lazyLoadListDemo/index", name:"图片延迟加载 List应用"},
 	{path:"lazyLoadViewDemo/index", name:"延迟加载任意View"},
 	{path:"tabComplexDemo/index",name:"Complex Tab"},
+	{path:"pageViewRequestDemo/index", name:"过场动画优化"},
 	{path:"IOAnimCallbackDemo/index", name:"过场动画回调"},
 	{path:"dataCenterDemo/index", name:"数据中心"},
 ]);
