@@ -1,0 +1,59 @@
+<div id="vmDemo" class="bin-page">
+    <style type="text/css">
+    #vmDemo .list-container
+    {
+        background-color: #fff;
+    }
+
+    #vmDemo .list-item
+    {
+        width: 100%;
+        height: 2rem;
+        margin-top: 5px;
+        line-height: 2rem;
+        text-align: center;
+        background-color: #ddd;
+    }
+
+    #vmDemo .button
+    {
+        width: 50%;
+        height: 2rem;
+        margin-top: 10px;
+        line-height: 2rem;
+        text-align: center;
+        background-color: gray;
+    }
+
+    #vmDemo .title
+    {
+        width: 100%;
+        height: 1.6rem;
+        line-height: 1.6rem;
+        text-align: center;
+        font-size: 0.8rem;
+    }
+
+    #vmDemo .title-input
+    {
+        width: 100%;
+        height: 1.5rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        line-height: 1.5rem;
+    }
+
+    </style>
+    <div class="bin-page-navi-bar" naviTitle="text:VM Demo"></div>
+    <div class="bin-page-content">
+        <div class="title">{{title}}</div>
+        <input class="title-input" v-model="titleValue" type="text" placeholder="请输入TITLE"></input>
+        <ul class="list-container">
+             <li class="list-item" v-for="item in items">
+                {{item.label}}
+            </li>
+        </ul>
+        <button class="button" @click="addItem">添加item</button>
+        <button class="button" @click="clearAll">清除所有</button>
+    </div>
+</div>

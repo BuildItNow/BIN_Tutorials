@@ -40,6 +40,7 @@ module.exports =
             "scrollViewDemo",
             "lazyLoadViewDemo",
             "viewDemo",
+            "vmDemo",
             "welcome",
             "selectDemo",
             "pageViewRequestDemo"

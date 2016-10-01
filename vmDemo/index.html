@@ -1,0 +1,92 @@
+<div id="index" class="bin-page">
+    <style type="text/css">
+    #index .bin-page-content
+    {
+        background-color: #fff;
+    }
+    #index .logo{
+        width: 5.5rem;
+        height: 6.5rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 0 auto;
+        margin-top: 2.25rem;
+    }
+    #index .mainPart{
+        padding: 1.5rem;
+        font-size: 0.7rem;
+        color: #333;
+    }
+    #index .inputIcon{
+        width: 1.25rem;
+        height: 1.25rem;
+        display: inline-block;
+        background-size: cover;
+        vertical-align: middle;
+    }
+    #index .text{
+        
+    display: inline-block;
+    width: 3rem;
+    padding-left: 0.5rem;
+    box-sizing: border-box;
+    color: #343434;
+    }
+    #index input{
+        border:none;
+        outline:none;
+        width: 8rem;
+        height: 2rem
+    }
+    #index .info{
+            border-bottom: solid #ddd 1px;
+            /*padding:1rem 0 0.3rem 0;*/
+            line-height: 2.5rem;
+    }
+    #index .inputIconTel{
+
+        background-image: url(vmDemo/img/tel.png);
+    }
+    #index .inputIconPwd{
+
+        background-image: url(vmDemo/img/pwd.png);
+    }
+    #index .forpwd{
+        color: #656565;
+        text-align: right;
+        margin-top: 0.7rem;
+        font-size: 0.6rem;
+    }
+    #index .button{
+        text-align: center;
+        height: 2rem;
+        line-height: 2rem;
+        border-radius: 0.2rem;
+        font-size: 0.75rem;
+    }
+    #index #login{
+         background: #00a1ea;
+        color: #fff;
+        margin:1.25rem 0;
+    }
+    #index #reg{
+        color: #5c5c5c;
+        border:solid #bcbcbc 1px;
+    }
+    </style>
+    <div class="bin-page-navi-bar" naviTitle="text:VM Login Demo"></div>
+    <div class="bin-page-content">
+        <div class="logo"></div>
+        <div class="mainPart">
+            <div class="info">
+                <span class=" inputIcon inputIconTel"></span><span class="text">手机号</span><input id="logphone" placeholder="请输入手机号" maxlength="11" v-model="username"/>
+            </div>
+            <div class="info">
+                <span class="inputIcon inputIconPwd"></span><span class="text">密码</span><input id="logpassword" placeholder="请输入密码" type="password" v-model="password"/>
+            </div>
+            <div class="forpwd"><span @click="goForget">忘记密码?</span></div>
+            <div class="button" id="login" @click="login">登录</div>
+            <div class="button" id="reg" @click="goRegister">注册</div>
+        </div>
+    </div>
+</div>

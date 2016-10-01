@@ -2,7 +2,7 @@ define(
 {
 	name : "Hello BIN Framework",
 	appID : "com.bin.tutorials",
-	runtime : "DEBUG",
+	runtime : "RELEASE",
 	pageIOAnim  : "rightIO",
 	placeholder : "bin/res/img/placeholder.jpg",
 	mapSDK: "2.0",
@@ -86,6 +86,7 @@ define(
 			"tabBarDemo/index",
 			"tabDemo/index",
 			"switchDemo/index",
+			"vmDemo/index",
 		]
 	}
 });

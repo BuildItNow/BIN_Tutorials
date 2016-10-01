@@ -1,5 +1,5 @@
 define(
-	["common/demoView", "bin/common/indicatorView"],
+	["common/demoView", "view!bin/common/indicatorView"],
 	function(Base, IndicatorView)
 	{
 		var Class = {};
@@ -13,7 +13,7 @@ define(
 		{
 			Base.prototype.genHTML.call(this);
 
-			var indicatorView = new IndicatorView();
+			var indicatorView = IndicatorView.create();
 			this.$append("#block0", indicatorView.$());
 			indicatorView.start();
 
@@ -26,7 +26,7 @@ define(
 			}, 3000);
 
 
-			var indicatorView1 = new IndicatorView();
+			var indicatorView1 = IndicatorView.create();
 			this.$append("#block2", indicatorView1.$());
 			
 			var id0 = indicatorView1.start();
@@ -52,7 +52,7 @@ define(
 		{
 			this.$html("#button", "点击屏蔽");
 
-			var indicatorView = new IndicatorView();
+			var indicatorView = IndicatorView.create();
 			this.$append("#block1", indicatorView.$());
 			indicatorView.start({model:true});
 			
