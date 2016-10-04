@@ -16,7 +16,7 @@ BIN对requirejs进行了改造，可对原requirejs的加载机制进行定制�
 
 ## 示例说明－页面开发
 ### [基于VUE VM模式开发](https://github.com/BuildItNow/BIN_Tutorials/tree/master/vmDemo)
-BIN在框架层面集成了VUE库，在业务开发中添加ViewModel层，数据驱动UI以减少对JQuery节点的操作；另一方在HTML中以声明方式实现事件绑定，减少Controller中过多的事件绑定代码；整体加速业务开发，减少冗余代码
+BIN在框架层面集成了[VUE](http://cn.vuejs.org/)库，在业务开发中添加ViewModel层，数据驱动UI以减少对JQuery节点的操作；另一方在HTML中以声明方式实现事件绑定，减少Controller中过多的事件绑定代码；整体加速业务开发，减少冗余代码
 ### [view开发](https://github.com/BuildItNow/BIN_Tutorials/tree/master/viewDemo)
 View是BIN框架中最基本的UI元素，本示例展示了通过两种方式创建一个基本的View
 ### [一般页面开发](https://github.com/BuildItNow/BIN_Tutorials/tree/master/normalPageDemo)
