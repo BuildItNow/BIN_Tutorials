@@ -2,7 +2,7 @@ define(
 {
 	name : "Hello BIN Framework",
 	appID : "com.bin.tutorials",
-	runtime : "RELEASE",
+	runtime : "DEBUG",
 	pageIOAnim  : "rightIO",
 	placeholder : "bin/res/img/placeholder.jpg",
 	mapSDK: "2.0",
