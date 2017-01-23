@@ -7,9 +7,9 @@ define([], function()
 		bin.netManager.doAPI({api:"/api/abortRequest", success:success, error:error, type:"GET", data:{a:10, b:"Hello"}, options:{loading:true, sendCheck:"ABORT_ON_REQUESTING"}});
 	}
 
-	Class.rejectRequest = function(success)
+	Class.rejectRequest = function(success, error)
 	{
-		bin.netManager.doAPI({api:"/api/rejectRequest", success:success, type:"GET", data:{a:10, b:"Hello"}, options:{loading:true, sendCheck:"REJECT_ON_REQUESTING"}});
+		bin.netManager.doAPI({api:"/api/rejectRequest", success:success, error:error, type:"GET", data:{a:10, b:"Hello"}, options:{loading:true, sendCheck:"REJECT_ON_REQUESTING"}});
 	}
 
 	return Class;

@@ -13,10 +13,10 @@ define(
 		Class.abort = function()
 		{
 			var self = this;
-			Client.abortRequest(function(data, netParams)
+			Client.abortRequest(function(data, textStatus, xhr, netParams)
 			{
 				self.$text("#abortResult", "结果：来源 "+netParams.userdatas.from+" 数据 "+util.dump(data));
-			}, function(error, netParams)
+			}, function(error, textStatus, netParams)
 			{
 				if(netParams.userdatas.abort)
 				{
@@ -28,9 +28,15 @@ define(
 		Class.reject = function()
 		{
 			var self = this;
-			Client.rejectRequest(function(data, netParams)
+			Client.rejectRequest(function(data, textStatus, xhr, netParams)
 			{
 				self.$text("#rejectResult", "结果：来源 "+netParams.userdatas.from+" 数据 "+util.dump(data));
+			}, function(error, textStatus, netParams)
+			{
+				if(error.statusText === "reject")
+				{
+					bin.hudManager.showStatus("请求被拒绝");
+				}
 			});
 		}
 

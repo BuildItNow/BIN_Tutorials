@@ -3,7 +3,7 @@ define(
 	name : "Hello BIN Framework",
 	appID : "com.bin.tutorials",
 	runtime : "DEBUG",
-	pageIOAnim  : "rightIO",
+	pageIOAnim  : "rightILeftO",
 	placeholder : "bin/res/img/placeholder.jpg",
 	mapSDK: "2.0",
 	//left   : 20,
