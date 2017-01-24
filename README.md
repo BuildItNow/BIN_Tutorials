@@ -3,8 +3,7 @@
 
 ## 本地运行
 * [下载](https://github.com/BuildItNow/BIN_Tutorials/archive/master.zip)BIN_Tutorials源码，解压到BIN_Tutorials目录
-* [下载](https://github.com/BuildItNow/BIN/archive/bin2.0-vue.zip)BIN框架代码，解压到BIN目录<br/>
-注意：VM模式开发示例需要下载[bin2.0-vue](https://github.com/BuildItNow/BIN/tree/bin2.0-vue)分支，其他直接使用[master](https://github.com/BuildItNow/BIN/tree/master)分支
+* [下载](https://github.com/BuildItNow/BIN/archive/master.zip)BIN框架代码，解压到BIN目录<br/>
 * 将BIN中的bin目录和index-spa.html文件拷贝到BIN_Tutorials中
 * 在Chrome中打开index-sap.html文件，Chrome必须以跨域方式打开
 
