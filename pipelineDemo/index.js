@@ -16,7 +16,17 @@ define(
 		Class.posGenHTML = function()
 		{
 			Base.prototype.posGenHTML.call(this);
+
 			var self = this;
+
+			var img = new Image();
+			img.src = "pipelineDemo/img/coord.png";
+
+			img.onload = function()
+        	{
+        		self._coordImage = img;
+        	}
+
 			var now = _.now();
 			var pre = now;
 			var cb   = function()
@@ -112,13 +122,18 @@ define(
 			}
 
 		    ctx.stroke();
+
+		    if(this._coordImage)
+		    {
+		    	ctx.drawImage(this._coordImage, 0, 480-100, 90, 100);
+		    }
 		}
 
 		Class.vmMethod_translation = function(plus)
 		{
 			var a = plus ? 0.5 : -0.5;
 			this._trans  = mathUtil.vecAddVec(this._trans, mathUtil.vector(a, a, a, 1));
-			this.vm.trans = this._trans.x;
+			this.vm.trans = this._trans.x.toFixed(2);;
             this._matT = mathUtil.matTranslation(this._trans);
 		}
 
@@ -126,7 +141,7 @@ define(
 		{
 			var a = plus ? 0.2 : -0.2;
 			this._scale += a;
-			this.vm.scale = this._scale;
+			this.vm.scale = this._scale.toFixed(2);;
             this._matS = mathUtil.matScale(this._scale, this._scale, 1);
 		}
 
@@ -134,7 +149,7 @@ define(
 		{
 			var a = plus ? 0.1 : -0.1;
 			this._rotate += a;
-			this.vm.rotate = this._rotate;
+			this.vm.rotate = this._rotate.toFixed(2);
 			this._matR.m00 = Math.cos(this._rotate);
 			this._matR.m02 = -Math.sin(this._rotate);
 			this._matR.m20 = Math.sin(this._rotate);
