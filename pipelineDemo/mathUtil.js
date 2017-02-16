@@ -87,6 +87,13 @@ define([], function()
 		return this.vector(n*v.x, n*v.y, n*v.z, v.w);
 	}
 
+	Class.vecInterpVec = function(s, v0, v1)
+	{
+		// v0+(v1-v0)*s
+
+		return this.vecAddVec(v0, this.nDotVec(s, this.vecMinVec(v1, v0)));
+	}
+
 	Class.vecAddVec = function(v0, v1)
 	{
 		return this.vector(v0.x+v1.x, v0.y+v1.y, v0.z+v1.z, v0.w);
