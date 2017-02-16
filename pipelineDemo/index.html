@@ -1,0 +1,36 @@
+<div id="pipelineDemoView" class="bin-page">
+	<style>
+		#pipelineDemoView .PipelineDemo-canvas-block
+        {
+            width:16rem;
+            height: 12rem;
+        }
+
+        #pipelineDemoView .PipelineDemo-canvas
+        {
+            width: 100%;
+            height: 100%;
+            background-color: gray;
+        }
+
+        #pipelineDemoView span
+        {
+            margin-left: 1rem;
+        }
+
+	</style>
+	<div id="naviBar" class="bin-page-navi-bar" naviTitle="text:WELCOME TO BIN" naviRight="hide:true">	    
+	</div>
+    <div class="bin-page-content">
+    	<div class="PipelineDemo-canvas-block">
+            <canvas id="canvas" class="PipelineDemo-canvas">
+            </canvas>
+        </div>
+        <div class="app-link" @click="translation(true)">平移+<span>{{trans}}</span></div>
+        <div class="app-link" @click="translation(false)">平移-</div>
+        <div class="app-link" @click="scalef(true)">缩放+<span>{{scale}}</span></div>
+        <div class="app-link" @click="scalef(false)">缩放-</div>
+        <div class="app-link" @click="rotatef(true)">旋转+<span>{{rotate}}</span></div>
+        <div class="app-link" @click="rotatef(false)">旋转-</div>
+    </div>
+</div>

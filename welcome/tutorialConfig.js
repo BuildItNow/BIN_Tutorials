@@ -1,5 +1,6 @@
 define([],
 [
+	{path:"pipelineDemo/index",name:"几何变换流水线DEMO"},
 	{path:"baiduMapDemo/index",name:"百度地图"},
 	{path:"lsLoaderDemo/index",name:"页面本地化"},
 	{path:"prLoaderDemo/index",name:"页面预加载"},
