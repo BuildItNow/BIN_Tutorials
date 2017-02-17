@@ -89,13 +89,6 @@ define(
 				{
 					effect:function(delta)
 					{
-						this.rotate += delta*this.rotateSpeed;
-						var R = _.clone(mathUtil.E);
-						R.m00 = Math.cos(this.rotate);
-						R.m02 = -Math.sin(this.rotate);
-						R.m20 = Math.sin(this.rotate);
-						R.m22 = Math.cos(this.rotate);
-
 						this.time += delta;
 						var len = this.frames.length;
 						var dur = this.frames[len-1].time;
@@ -129,7 +122,7 @@ define(
 
 						var T = mathUtil.matTranslation(pos);
 
-						return mathUtil.matDotMat(R, T);
+						return T;
 					},
 					frames:
 					[
@@ -156,7 +149,67 @@ define(
 					],
 					time:0,
 					rotate:0,
-					rotateSpeed:mathUtil.PI,
+					rotateSpeed:180,
+				}
+			};
+
+			this._box1 = {
+				vts:this.generateBox(1), 
+				color:"#00FF00", 
+				effecter:
+				{
+					effect:function(delta)
+					{
+						this.rotate += delta*this.rotateSpeed;
+						var R = mathUtil.matRotate_vd(this.axis, this.rotate);
+						var T = mathUtil.matTranslation(this.position);
+
+						return mathUtil.matDotMat(R, T);
+					},
+					rotate:0,
+					rotateSpeed:180,
+					axis:mathUtil.vector(1, 1, 1),
+					position:mathUtil.vector(0, 0, 5, 1),
+				}
+			};
+
+			this._box2 = {
+				vts:this.generateBox(1), 
+				color:"#00FF00", 
+				effecter:
+				{
+					effect:function(delta)
+					{
+						this.rotate += delta*this.rotateSpeed;
+						var R = mathUtil.matRotate_vd(this.axis, this.rotate);
+						var T = mathUtil.matTranslation(this.position);
+
+						return mathUtil.matDotMat(R, T);
+					},
+					rotate:0,
+					rotateSpeed:180,
+					axis:mathUtil.vector(-1, -1, -1),
+					position:mathUtil.vector(0, 2, 5, 1),
+				}
+			};
+
+			this._box3 = {
+				vts:this.generateBox(1), 
+				color:"#00FF00", 
+				effecter:
+				{
+					effect:function(delta)
+					{
+						this.rotate += delta*this.rotateSpeed;
+						var R = mathUtil.matRotate_vd(this.axis, this.rotate);
+						var T = mathUtil.matTranslation(this.position);
+
+						return mathUtil.matDotMat(R, T);
+					},
+					rotate:0,
+					rotateSpeed:180,
+					axis:mathUtil.vector(-1, 1, 0),
+					position:mathUtil.vector(0, -2, 5, 1),
 				}
 			};
 
@@ -196,14 +249,26 @@ define(
 			var ctx = this._canvas.getContext("2d");
 			
 			ctx.clearRect (0, 0, 640, 480);
-        	
+
 			ctx.beginPath();
-			var W = this._rect0.effecter.effect(delta);
-			this.drawRect(ctx, this._rect0.vts, this._rect0.color, W);
+		    var W = this._box0.effecter.effect(delta);
+		    this.drawBox(ctx, this._box0.vts, this._box0.color, W, true);
+
+			ctx.beginPath();
+		    W = this._box1.effecter.effect(delta);
+		    this.drawBox(ctx, this._box1.vts, this._box1.color, W);
 			
 			ctx.beginPath();
-		    W = this._box0.effecter.effect(delta);
-		    this.drawBox(ctx, this._box0.vts, this._box0.color, W);
+		    W = this._box2.effecter.effect(delta);
+		    this.drawBox(ctx, this._box2.vts, this._box2.color, W);
+
+		    ctx.beginPath();
+		    W = this._box3.effecter.effect(delta);
+		    this.drawBox(ctx, this._box3.vts, this._box3.color, W);
+
+		    ctx.beginPath();
+			W = this._rect0.effecter.effect(delta);
+			this.drawRect(ctx, this._rect0.vts, this._rect0.color, W, true);
 
 		    if(this._coordImage)
 		    {
@@ -213,7 +278,7 @@ define(
 		    this.dumpDebugText(ctx);
 		}
 
-		Class.drawBox = function(ctx, box, color, T)
+		Class.drawBox = function(ctx, box, color, T, debug)
 		{
 			ctx.save();
 			ctx.strokeStyle = color;
@@ -276,8 +341,11 @@ define(
 
 			ctx.restore();
 
-			var pos = T.row(3);
-			this.drawDebugText("("+pos.x.toFixed(2)+","+pos.y.toFixed(2)+","+pos.z.toFixed(2)+")", pts[0].x, pts[0].y-10);
+			if(debug)
+			{
+				var pos = T.row(3);
+				this.drawDebugText("("+pos.x.toFixed(2)+","+pos.y.toFixed(2)+","+pos.z.toFixed(2)+")", pts[0].x, pts[0].y-10);
+			}
 		}
 
 		Class.generateBox = function(w)
@@ -304,7 +372,7 @@ define(
 			];
 		}
 
-		Class.drawRect = function(ctx, rect, color, T)
+		Class.drawRect = function(ctx, rect, color, T, debug)
 		{
 			ctx.save();
 			ctx.strokeStyle = color;
@@ -341,8 +409,11 @@ define(
 
 			ctx.restore();
 
-			var pos = T.row(3);
-			this.drawDebugText("("+pos.x.toFixed(2)+","+pos.y.toFixed(2)+","+pos.z.toFixed(2)+")", pts[0].x, pts[0].y-10);
+			if(debug)
+			{
+				var pos = T.row(3);
+				this.drawDebugText("("+pos.x.toFixed(2)+","+pos.y.toFixed(2)+","+pos.z.toFixed(2)+")", pts[0].x, pts[0].y-10);
+			}
 		}
 
 		Class.generateRect = function(w)
@@ -381,13 +452,10 @@ define(
 
 		Class.vmMethod_rotatef = function(plus)
 		{
-			var a = plus ? 0.1 : -0.1;
+			var a = plus ? 15 : -15;
 			this._rotate += a;
 			this.vm.rotate = this._rotate.toFixed(2);
-			this._matR.m00 = Math.cos(this._rotate);
-			this._matR.m02 = -Math.sin(this._rotate);
-			this._matR.m20 = Math.sin(this._rotate);
-			this._matR.m22 = Math.cos(this._rotate);
+			this._matR = mathUtil.matRotate_y(this._rotate);
         }
 		
 		return Base.extend(Class);

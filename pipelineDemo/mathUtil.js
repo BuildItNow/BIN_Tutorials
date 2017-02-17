@@ -38,7 +38,7 @@ define([], function()
 			row:function(i)
 			{
 				var k = "m"+i;
-				return {x:this[k+0], y:this[k+1], z:this[k+2], w:this[k+3]}
+				return Class.vector(this[k+0], this[k+1], this[k+2], this[k+3]);
 			},
 			setRow:function(i, v)
 			{
@@ -50,7 +50,7 @@ define([], function()
 			},
 			col:function(i)
 			{
-				return {x:this["m0"+i], y:this["m1"+i], z:this["m2"+i], w:this["m3"+i]}
+				return Class.vector(this["m0"+i], this["m1"+i], this["m2"+i], this["m3"+i]);
 			},
 			setCol:function(i, v)
 			{
@@ -58,6 +58,15 @@ define([], function()
 				this["m1"+i]=v.y;
 				this["m2"+i]=v.z;
 				this["m3"+i]=v.w;
+			},
+			transpose:function()
+			{
+				return Class.matrix(
+							this.m00, this.m10, this.m20, this.m30,
+							this.m01, this.m11, this.m21, this.m31,
+							this.m02, this.m12, this.m22, this.m32,
+							this.m03, this.m13, this.m23, this.m33
+						);
 			}
 		}
 	}
@@ -144,14 +153,77 @@ define([], function()
 					);
 	}
 
-	Class.matRotate_xyz = function()
+	Class.matRotate_x = function(d)
 	{
+		var r = this.degToRad(d);
+		var s = Math.sin(r);
+		var c = Math.cos(r);
 
+		return this.matrix(
+			1, 0, 0, 0,
+			0, c, s, 0, 
+			0, -s, c, 0,
+			0, 0, 0, 1
+			);
 	}
 
-	Class.matRotate_va = function()
+	Class.matRotate_y = function(d)
 	{
+		var r = this.degToRad(d);
+		var s = Math.sin(r);
+		var c = Math.cos(r);
 
+		return this.matrix(
+			c, 0, -s, 0,
+			0, 1, 0, 0, 
+			s, 0, c, 0,
+			0, 0, 0, 1
+			);
+	}
+
+	Class.matRotate_z = function(d)
+	{
+		var r = this.degToRad(d);
+		var s = Math.sin(r);
+		var c = Math.cos(r);
+
+		return this.matrix(
+			c, s, 0, 0,
+			-s, c, 0, 0, 
+			0, 0, 1, 0,
+			0, 0, 0, 1
+			);
+	}
+
+	Class.matRotate_vd = function(v, d)
+	{
+		if(this.is0(v.y) && this.is0(v.z))
+		{
+			return this.matRotate_x(d);
+		}
+		else if(this.is0(v.x) && this.is0(v.z))
+		{
+			return this.matRotate_y(d);
+		}
+		else if(this.is0(v.x) && this.is0(v.y))
+		{
+			return this.matRotate_z(d);
+		}
+
+		// Make a new coordnation
+		var vX = v;
+		var vZ = this.vecCroVec(vX, this.Y);
+		var vY = this.vecCroVec(vZ, vX);
+
+		vX = vX.nor();
+		vZ = vZ.nor();
+		vY = vY.nor();
+
+		var A = this.matRotate_x(d);
+		var T = this.matrixFromRows(vX, vY, vZ, this.vector(0, 0, 0, 1));
+		var T_ = T.transpose();
+
+		return this.matDotMat(this.matDotMat(T_, A), T);
 	}
 
 	Class.matScale = function(sx, sy, sz)
@@ -225,6 +297,11 @@ define([], function()
 
 	Class.PI = Math.PI;
 
+	Class.X = Class.vector(1, 0, 0);
+	Class.Y = Class.vector(0, 1, 0);
+	Class.Z = Class.vector(0, 0, 1);
+
+
 	Class.degToRad = function(deg)
 	{
 		return deg*this.PI/180;
@@ -233,6 +310,11 @@ define([], function()
 	Class.radToDeg = function(rad)
 	{
 		return rad*180/this.PI;
+	}
+
+	Class.is0 = function(v)
+	{
+		return v > -0.00000001 && v < 0.00000001;
 	}
 
 	return Class;
