@@ -1,0 +1,27 @@
+<div id="hybridIdeaDemo" class="bin-page">
+	<style>
+        #hybridIdeaDemo .HybridIdeaDemo-demo-link
+        {
+           margin-top: 5px;
+           margin-left: 10px;
+           display: block;
+        }
+
+        #hybridIdeaDemo .bin-page-content
+        {
+            font-size: 0.6rem;
+        }
+	</style>
+	<div id="naviBar" class="bin-page-navi-bar" naviTitle="text:WELCOME TO BIN" naviRight="hide:true">	    
+	</div>
+    <div class="bin-page-content">
+        <p>
+            使用BIN框架进行混合开发时，在H5层基本上可以完成大多数的业务开发，然而仍然不能避免Native页面的引入（Native能够表现出更好的操作体验），但是以H5为主导过后，H5页面和Native页面的交互则成为了麻烦（H5页面进入Native页面，Native页面将不能进行入新的H5页面）。如果采用多个WebView，将会存在多个JS上下文。那么不妨借鉴一下游戏里面的脚本引擎的思路，始终保持一个JS上下文，也就只有一个WebView，在H5页面和Native页面切换时，复用原有的WebView。
+        </p>
+        <p>
+            以下两个Demo分别展示了在IOS平台上对上述想法的实现，而在Android平台不支持同一个View在多个Activity之间共享，因此不能实现。
+        </p>
+        <a class="HybridIdeaDemo-demo-link" target='_blank' href='http://101.200.215.114/apps/tutorials/navigationStackDemo.html'>H5页面栈统一Native页面和H5页面</a>
+        <a class="HybridIdeaDemo-demo-link" target='_blank' href='http://101.200.215.114/apps/tutorials/navigationDataDemo.html'>H5页面和Native页面相互跳转时进行数据传递</a>
+    </div>
+</div>

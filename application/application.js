@@ -15,6 +15,14 @@ function(Base, DataCenter)
 		{
 			$("#windowLoading").remove();
 		}});
+
+		if(this.width() > 500)
+		{
+			setTimeout(function()
+			{
+				bin.hudManager.showStatus("为了更好的体验BIN框架，建议使用移动调试方式浏览");
+			}, 1000);
+		}
 	}
 
 	return Base.extend(Application);

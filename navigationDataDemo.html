@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BIN Framework</title>
+    </head>
+    <body>
+        <style>
+            body
+            {
+                text-align: center;
+                box-sizing: boder-box;
+                margin: 0;
+            }
+            .window
+            {
+                text-align: center;
+                width:640px;
+                position: relative;
+                margin: auto;
+                background-color: #fafafa;
+                padding-bottom: 20px;
+            }
+
+            .title
+            {
+                font-weight: bold;
+                line-height: 48px;
+                font-size: 24px;
+                margin: auto;
+            }
+
+            .h-line
+            {
+                height: 1px;
+                width: 600px;
+                margin: auto;
+                background-color: #bbb;
+            }
+
+            .description
+            {
+                line-height: 18px;
+                font-size: 12px;
+                text-align: left;
+                padding: 0px 20px;
+            }
+
+            .demo-content-block
+            {
+                width: 100%;
+                text-align: center;
+            }
+
+            .demo-content
+            {
+                margin-left: auto;
+                margin-right: auto;
+                width: auto;
+                height: auto;
+            }
+
+            .demo-content-image
+            {
+                width: 320px;
+                box-shadow:0px 0px 8px #aaaaaa;
+            }
+
+            text
+            {
+                color:red;
+            }
+
+            .demo-content-image-title
+            {
+                font-size: 12px;
+                line-height: 14px;
+                color: #aaa;
+            }
+        </style>
+        <div class="window">
+            <div class="title">  
+                H5页面和Native页面相互跳转时进行数据传递
+            </div>
+            <div class="h-line"></div>
+            <div class="description">  
+                <p>
+                    该DEMO分别展示了<text>H5页面</text>和<text>Native页面</text>相互跳转的<text>数据传递</text>。在页面跳转时均使用push和pop接口传递数据，在PageView对象上分别通过onViewPush和onViewBack接收传递的数据。
+                </p>
+            </div>
+            <div class="demo-content-block">
+                <div class="demo-content">
+                    <div class="demo-content-image-title">
+                        Native页面向H5页面传递数据
+                    </div>
+                    <img class="demo-content-image" src="http://101.200.215.114/res/gif/hybrid-with-data-to-h5.gif">
+                    </img>
+                    <div class="demo-content-image-title" style="margin-top:10px">
+                        H5页面向Native页面传递数据
+                    </div>
+                    <img class="demo-content-image" src="http://101.200.215.114/res/gif/hybrid-with-data.gif">
+                    </img>
+                </div>
+            </div>
+        <div>
+    </body>
+</html>

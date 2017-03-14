@@ -35,7 +35,10 @@ define(
 				self.onFrame((now-pre)*0.001);
 				pre = now;
 
-				raf(cb);
+				if(!self._stop)
+				{
+					raf(cb);
+				}
 			}
 			raf(cb);
 
@@ -456,6 +459,11 @@ define(
 			this._rotate += a;
 			this.vm.rotate = this._rotate.toFixed(2);
 			this._matR = mathUtil.matRotate_y(this._rotate);
+        }
+
+        Class.onRemove = function()
+        {
+        	this._stop = true;
         }
 		
 		return Base.extend(Class);

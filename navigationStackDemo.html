@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BIN Framework</title>
+    </head>
+    <body>
+        <style>
+            body
+            {
+                text-align: center;
+                box-sizing: boder-box;
+                margin: 0;
+            }
+            .window
+            {
+                text-align: center;
+                width:640px;
+                position: relative;
+                margin: auto;
+                background-color: #fafafa;
+                padding-bottom: 20px;
+            }
+
+            .title
+            {
+                font-weight: bold;
+                line-height: 48px;
+                font-size: 24px;
+                margin: auto;
+            }
+
+            .h-line
+            {
+                height: 1px;
+                width: 600px;
+                margin: auto;
+                background-color: #bbb;
+            }
+
+            .description
+            {
+                line-height: 18px;
+                font-size: 12px;
+                text-align: left;
+                padding: 0px 20px;
+            }
+
+            .demo-content-block
+            {
+                width: 100%;
+                text-align: center;
+            }
+
+            .demo-content
+            {
+                margin-left: auto;
+                margin-right: auto;
+                width: auto;
+                height: auto;
+            }
+
+            .demo-content-image
+            {
+                width: 320px;
+                box-shadow:0px 0px 8px #aaaaaa;
+            }
+
+            text
+            {
+                color:red;
+            }
+        </style>
+        <div class="window">
+            <div class="title">  
+                H5页面栈统一Native页面和H5页面
+            </div>
+            <div class="h-line"></div>
+            <div class="description">  
+                <p>
+                    当使用BIN开发单页应用时，在H5层有自己的页面栈，在Native层也有自己的页面栈，因此要实现混合开发，需要将两者的页面栈进行统一（用H5页面栈统一Native页面），每一个Native页面在H5层均有自己的页面对象，该页面对象保持和H5页面对象有一致的接口，并且Native页面的业务逻辑在该页面对象中进行实现。
+                </p>
+                <p>
+                    该DEMO展示了从<text>H5页面(示例 混合开发)</text>跳转到<text>Native页面(原生页面)</text>，再跳转到<text>H5页面(示例 Demo)</text>。
+                </p>
+            </div>
+            <div class="demo-content-block">
+                <div class="demo-content">
+                    <img class="demo-content-image" src="http://101.200.215.114/res/gif/hybrid.gif">
+                    </img>
+                </div>
+            </div>
+        <div>
+    </body>
+</html>

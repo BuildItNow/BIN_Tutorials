@@ -23,6 +23,13 @@
             font-size: 0.6rem;
         }
 
+        #pipelineDemoView .PipelineDemo-demo-link
+        {
+           margin-top: 5px;
+           margin-left: 10px;
+           display: block;
+        }
+
 	</style>
 	<div id="naviBar" class="bin-page-navi-bar" naviTitle="text:WELCOME TO BIN" naviRight="hide:true">	    
 	</div>
@@ -32,7 +39,7 @@
             </canvas>
         </div>
         <div class="PipelineDemo-title">
-            该Demo用软件实现的方式展示了从3D空间到屏幕空间的变换过程，该过程通常被称为Graphics Pipeline，由GPU硬件执行。
+            该Demo用软件实现的方式展示了从3D空间到屏幕空间的变换过程，该过程通常被称为<text style="color:red">Graphics Pipeline</text>，由GPU硬件执行。
         </div>
         <div class="PipelineDemo-title">
             平面沿向量(a, a, a)进行平移:
@@ -58,5 +65,12 @@
             <span class="app-link" @click="rotatef(false)">旋转-</span>
             <span>r={{rotate}}</span>
         </div>
+        <div class="PipelineDemo-title" style="margin-top:8px">
+            关于<text style="color:red">引擎渲染</text>的一些DEMO：
+        </div>
+        <a class="PipelineDemo-demo-link" target='_blank' href='https://pan.baidu.com/s/1slNd91b'>3D模型渲染和骨骼动画</a>
+        <a class="PipelineDemo-demo-link" target='_blank' href='https://pan.baidu.com/s/1bYhtdO'>2D动作&魔法查看器</a>
+        <a class="PipelineDemo-demo-link" target='_blank' href='https://pan.baidu.com/s/1nvv1yVB'>2D地图场景渲染</a>
+        <a class="PipelineDemo-demo-link" target='_blank' href='https://pan.baidu.com/s/1skZE7gD'>2D资源查看器</a>
     </div>
 </div>
