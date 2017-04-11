@@ -4,19 +4,14 @@ define(
 	{
 		var Class = 
 		{
-			events:
-			{
-				"click #normal":"normalMethod",
-				"click #optimize"  :"optimizeMethod"
-			}
 		};
 
-		Class.normalMethod = function()
+		Class.vmMethod_normalMethod = function()
 		{
 			bin.naviController.push("pageViewRequestDemo/normalView");
 		}
 
-		Class.optimizeMethod = function()
+		Class.vmMethod_optimizeMethod = function()
 		{
 			bin.naviController.push("pageViewRequestDemo/optimizeView");
 		}

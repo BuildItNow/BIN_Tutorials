@@ -4,18 +4,31 @@ define(
 	{
 		var Class = {};
 
-		Class.events = 
+		Class.vmData = 
 		{
-			"click #sendRequest" : "sendRequest"
-		};
-
-		Class.sendRequest = function()
+			res:""
+		}
+		Class.vmMethod_sendRequest = function()
 		{
 			var self = this;
-			Client.testAPI(function(data)
+
+			// ajax callback style
+			// Client.testAPI_callback(function(data)
+			// {
+			// 	self.vm.res = util.dump(data);
+			// }, function(error)
+			// {
+			// 	self.vm.res = "网络请求失败"+error.statusText;
+			// });
+
+			// promise style
+			Client.testAPI_promise().then(function(data)
 			{
-				self.$text("#requestResult", util.dump(data));
-			})
+				self.vm.res = util.dump(data);
+			}).catch(function(error)
+			{
+				self.vm.res = "网络请求失败"+error.statusText;
+			});
 		}
 
 		return Base.extend(Class);

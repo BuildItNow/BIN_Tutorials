@@ -3,7 +3,7 @@
 	</div>
     <div class="bin-page-content">
     	<p>页面在过场动画过程中，为了保持动画流畅性，应该尽可能减少DOM操作；BIN框架针对页面类（PageView）提供了request接口，在尽可能不影响正常业务代码开发方式下，将DOM操作延迟到过场动画结束时进行操作；这种场景特别适用于页面构造的异步操作，比如网络请求。</p>
-    	<div id="normal" class="app-link">正常代码</div>
-    	<div id="optimize" class="app-link">优化代码</div>
+    	<div id="normal" class="app-link" @click="normalMethod">正常代码</div>
+    	<div id="optimize" class="app-link" @click="optimizeMethod">优化代码</div>
     </div>
 </div>

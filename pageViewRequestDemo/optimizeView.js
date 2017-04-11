@@ -6,21 +6,25 @@ define(
 
 		Class.posGenHTML = function()
 		{
-			this.request(function(s, e)
+			this.request(new Promise(function(res, rej)
 			{
 				bin.mapManager.require(function(error)
 				{  	
 					if(error)
 					{
+						rej(error);
 						return ;
 					}
 
-					s();
+					res();
 				});
-			}, function()
+			})).then(function()
 	        {
 	        	var map = new BMap.Map("optMapContainer");
 	            map.centerAndZoom(new BMap.Point(106.53,29.59),16);
+	        }).catch(function(error)
+	        {
+	        	bin.hudManager.showStatus("加载地图失败");
 	        });
 		}
 
